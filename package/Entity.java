@@ -1,5 +1,6 @@
 public abstract class Entity {
     
+    /** (x,y)はエンティティの左上 */
     double x,y;
     int width,height;
 
