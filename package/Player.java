@@ -1,6 +1,7 @@
 public class Player extends Entity{
-    
     final int SPEED = 1;
+    final int LIFE = 3;
+    int score = 0;
 
     Player(double x,double y,int width, int height){
         super(x, y, width, height);
