@@ -21,6 +21,14 @@ public class Main{
 
     public static void gameLoop(){
         //gameLoopの中身書いてね
+        Entity block[][] = new Entity[3][5];
+        final int WIDTH = 80;
+        final int HEIGHT = 100;
+        for(int i = 0;i<block.length;i++){
+            for(int j = 0;j<block[i].length;j++){
+                block[i][j] = new Block(50+WIDTH*j, -10-HEIGHT*i, WIDTH, HEIGHT);
+            }
+        }
     }
 
 }

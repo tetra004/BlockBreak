@@ -10,16 +10,19 @@ public class Window extends JFrame{
 
     Canvas cv;
 
+    static final int WIDTH  = 500;
+    static final int HEIGHT = 500;
+
     Window(String name){
 
         this.setTitle(name);
-        this.setSize(500,500);
+        this.setSize(Window.WIDTH,Window.HEIGHT);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setResizable(false);
         this.setVisible(true);
 
-        this.cv = new Canvas(this.getWidth(), this.getHeight());
+        this.cv = new Canvas(Window.WIDTH,Window.HEIGHT);
         this.add(this.cv);
 
         this.addKeyListener(new KeyListener(){
