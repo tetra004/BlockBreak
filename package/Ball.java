@@ -1,3 +1,6 @@
-public class Ball {
+public class Ball extends Entity {
+    int radius;
+    int x;
+    int y;
     
 }
