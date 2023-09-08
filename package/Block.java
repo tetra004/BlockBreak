@@ -1,7 +1,10 @@
 public class Block extends Entity{
+    
+    int score;
 
-    Block(double x,double y,int width,int height){
-        super(x, y, width, height);
+    Block(double x,double y,int score){
+        super(x, y, 80, 100);
+        score = this.score;
     }
     //ブロックの座標は左上
 }
