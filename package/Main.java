@@ -10,8 +10,8 @@ public class Main{
     static Player player;
 
     public static void main(String[] args) {
-        ball = new Ball(10, -300, 5);
-        player = new Player(250, -400);
+        ball = new Ball(10, 300, 10);
+        player = new Player(250, 400);
 
         Window win = new Window("Test");
 
@@ -38,12 +38,12 @@ public class Main{
             }
         }
 
-        if(ball.y<Window.HEIGHT){
-            player.life--;
-            ball.x = 10;
-            ball.y = -300;
-            if(player.life==0){}
-        }
+        // if(ball.y<Window.HEIGHT){
+        //     player.life--;
+        //     ball.x = 10;
+        //     ball.y = -300;
+        //     if(player.life==0){}
+        // }
 
     }
 }
