@@ -1,48 +1,49 @@
 public class Ball extends Entity {
+
     int radius;
+    int vx;
+    int vy;
+
+    final int SPEED = 2;
+
     public Ball(double x,double y,int radius){
         super(x,y,radius*2,radius*2);
         this.radius = radius;
-    }
-    public boolean isHit(Entity target){
         
-        // double x1;
-        // double x2;
-        // double y1;
-        // double y2;
+        this.vx= SPEED;
+        this.vy=-SPEED;
+    }
 
-        // double l = Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
-        // if(l - r1 - r2 <= 0){
-        //     return true;
-        // }else{
-        //     return false;
-        // }
+    public boolean isHit(Entity target){
+
+        if(target==null)return false;
         
         double xc = this.x + this.radius;
         double yc = this.y + this.radius;
-        if((target.x-this.radius <= xc && xc <= target.x+target.width+this.radius) && (target.y-this.radius <= yc && yc <= target.y+target.height+this.radius)){
+        if((target.x-this.radius < xc && xc < target.x+target.width+this.radius) && (target.y-this.radius < yc && yc < target.y+target.height+this.radius)){
             return true;
         }
         return false;
     }
+
     public void move(){
-        int vx;
-        int vy;
-        x += vx;
-        y += vy;
-        if((this.x+this.radius*2) >= Window.WIDTH){
-            x -= vx;
+        this.x += this.vx;
+        this.y += this.vy;
+
+        if((this.x+this.radius*2) >= Window.WIDTH || this.x <= 0){
+            this.vx*=-1;
         }
-        if(isHit(Main.player)){
-            y -= vy;
+
+        if(isHit(Main.player) || this.y<0){
+            this.vy *= -1;
         }
-        if(this.x <= 0){
-            x += vx;
-        }
+
         for(int i = 0; i < Main.blocks.length; i++){
-            for(int j = 0; j < Main.blocks[i].length; j++){
+            for(int j = 0; j < Main.blocks[0].length; j++){
                 if(isHit(Main.blocks[i][j])){
-                    y += vy
+                    //todo:側面の場合と正面の場合で場合分けする
+                    vy*=-1;
+                    break;
                 }
             }
         }
