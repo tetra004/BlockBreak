@@ -5,6 +5,7 @@ public class Ball extends Entity {
         this.radius = radius;
     }
     public boolean isHit(Entity target){
+        
         // double x1;
         // double x2;
         // double y1;
@@ -23,5 +24,27 @@ public class Ball extends Entity {
             return true;
         }
         return false;
+    }
+    public void move(){
+        int vx;
+        int vy;
+        x += vx;
+        y += vy;
+        if((this.x+this.radius*2) >= Window.WIDTH){
+            x -= vx;
+        }
+        if(isHit(Main.player)){
+            y -= vy;
+        }
+        if(this.x <= 0){
+            x += vx;
+        }
+        for(int i = 0; i < Main.blocks.length; i++){
+            for(int j = 0; j < Main.blocks[i].length; j++){
+                if(isHit(Main.blocks[i][j])){
+                    y += vy
+                }
+            }
+        }
     }
 }
