@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
@@ -25,6 +26,11 @@ public class Canvas extends JPanel{
     }
 
     public void draw(Graphics g){
-        g.fillOval(100,100, 50, 50);
+        g.setColor(Color.cyan);
+        for(int i=0;i<Main.blocks.length;i++){
+            for (int j = 0; j < Main.blocks[0].length; j++) {
+                g.fillRect((int)Main.blocks[i][j].x, (int)Main.blocks[i][j].y, Main.blocks[i][j].width, Main.blocks[i][j].height);
+            }
+        }
     }
 }
