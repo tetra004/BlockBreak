@@ -30,13 +30,16 @@ public class Main{
         //gameLoopの中身書いてね
 
         for(int i = 0;i<blocks.length;i++){
-            for(int j = 0;j<blocks[i].length;j++){
+            for(int j = 0;j<blocks[0].length;j++){
                 if(ball.isHit(blocks[i][j])){
                     player.score = blocks[i][j].score;
                     blocks[i][j] = null;
+                    break;
                 }
             }
         }
+
+        ball.move();
 
         // if(ball.y<Window.HEIGHT){
         //     player.life--;
