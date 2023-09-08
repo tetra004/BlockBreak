@@ -32,5 +32,8 @@ public class Canvas extends JPanel{
                 g.fillRect((int)Main.blocks[i][j].x, (int)Main.blocks[i][j].y, Main.blocks[i][j].width, Main.blocks[i][j].height);
             }
         }
+
+        g.setColor(Color.blue);
+        g.fillOval((int)Main.ball.x, (int)Main.ball.y, Main.ball.radius*2, Main.ball.radius*2);
     }
 }
