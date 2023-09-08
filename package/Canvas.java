@@ -29,11 +29,15 @@ public class Canvas extends JPanel{
         g.setColor(Color.cyan);
         for(int i=0;i<Main.blocks.length;i++){
             for (int j = 0; j < Main.blocks[0].length; j++) {
+                if(Main.blocks[i][j]==null)continue;
                 g.fillRect((int)Main.blocks[i][j].x, (int)Main.blocks[i][j].y, Main.blocks[i][j].width, Main.blocks[i][j].height);
             }
         }
 
         g.setColor(Color.blue);
         g.fillOval((int)Main.ball.x, (int)Main.ball.y, Main.ball.radius*2, Main.ball.radius*2);
+
+        g.setColor(Color.red);
+        g.fillRect((int)Main.player.x, (int)Main.player.y, Main.player.width, Main.player.height);
     }
 }
