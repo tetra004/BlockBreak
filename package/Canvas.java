@@ -42,5 +42,7 @@ public class Canvas extends JPanel{
 
         g.setColor(Color.black);
         g.drawString("score/"+Main.player.score, 10, 10);
+        g.drawString("life/"+Main.player.life, 10, 25);
+
     }
 }

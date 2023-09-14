@@ -42,6 +42,11 @@ public class Main{
         ball.move();
         player.move();
 
+        if(ball.y>Window.HEIGHT){
+            player.life--;
+            ball.x = 10;
+            ball.y = 300;
+        }
 
     }
 }
