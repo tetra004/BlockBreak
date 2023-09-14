@@ -1,12 +1,11 @@
 public class Block extends Entity{
     
-    int score;
+    static final int SCORE = 10;
     static final int WIDTH = 80;
     static final int HEIGHT= 10;
 
-    Block(double x,double y,int score){
+    Block(double x,double y){
         super(x, y, Block.WIDTH, Block.HEIGHT);
-        this.score = score;
     }
 
     public static Block[][] generateArrays(){
@@ -15,7 +14,7 @@ public class Block extends Entity{
 
         for(int i = 0;i<blocks.length;i++){
             for(int j = 0;j<blocks[0].length;j++){
-                blocks[i][j] = new Block(50+(Block.WIDTH+1)*j, 10+(Block.HEIGHT+1)*i , 10);
+                blocks[i][j] = new Block(50+(Block.WIDTH+1)*j, 10+(Block.HEIGHT+1)*i);
             }
         }
 

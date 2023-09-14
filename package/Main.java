@@ -18,7 +18,7 @@ public class Main{
         Timer timer = new Timer(0, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(player.life!=0&&player.score<blocks[0][0].score*15)gameLoop();
+                if(player.life!=0&&player.score<Block.SCORE*blocks.length*blocks[0].length)gameLoop();
                 win.cv.repaint();
             }
         });
@@ -32,7 +32,7 @@ public class Main{
         for(int i = 0;i<blocks.length;i++){
             for(int j = 0;j<blocks[0].length;j++){
                 if(ball.isHit(blocks[i][j])){
-                    player.score += blocks[i][j].score;
+                    player.score += Block.SCORE;
                     blocks[i][j] = null;
                     break;
                 }
