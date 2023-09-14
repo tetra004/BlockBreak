@@ -47,7 +47,7 @@ public class Canvas extends JPanel{
             g.drawString("life/"+Main.player.life, 10, 25);
         }else if(Main.player.score==Main.blocks[0][0].score*15){
             g.setColor(Color.blue);
-            g.setFont(new Font("ＭＳ Ｐゴシック",Font.PLAIN,12));
+            g.setFont(new Font("ＭＳ Ｐゴシック",Font.PLAIN,70));
             g.drawString("gameclear", 110, 250);
         }else{
             g.setColor(Color.red);
