@@ -1,5 +1,5 @@
 public class Player extends Entity{
-    final int SPEED = 1;
+    final int SPEED = 10;
     int life = 3;
     int score = 0;
 
@@ -9,6 +9,6 @@ public class Player extends Entity{
     
     public void move(){
         if(Window.isKeyPressed[0]&&this.x>0)this.x-=this.SPEED;
-        if(Window.isKeyPressed[1]&&this.x<Window.WIDTH)this.x+=SPEED;
+        if(Window.isKeyPressed[1]&&this.x+this.width<Window.WIDTH)this.x+=SPEED;
     }
 }

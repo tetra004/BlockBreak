@@ -32,7 +32,7 @@ public class Main{
         for(int i = 0;i<blocks.length;i++){
             for(int j = 0;j<blocks[0].length;j++){
                 if(ball.isHit(blocks[i][j])){
-                    player.score = blocks[i][j].score;
+                    player.score += blocks[i][j].score;
                     blocks[i][j] = null;
                     break;
                 }
@@ -40,13 +40,8 @@ public class Main{
         }
 
         ball.move();
+        player.move();
 
-        // if(ball.y<Window.HEIGHT){
-        //     player.life--;
-        //     ball.x = 10;
-        //     ball.y = -300;
-        //     if(player.life==0){}
-        // }
 
     }
 }
