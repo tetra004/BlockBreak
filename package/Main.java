@@ -45,7 +45,7 @@ public class Main{
         if(ball.y>Window.HEIGHT){
             player.life--;
             ball.x = 10;
-            ball.y = 300;
+            ball.y = 30;
         }
 
     }
