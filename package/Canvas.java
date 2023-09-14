@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
@@ -26,23 +27,32 @@ public class Canvas extends JPanel{
     }
 
     public void draw(Graphics g){
-        g.setColor(Color.cyan);
-        for(int i=0;i<Main.blocks.length;i++){
-            for (int j = 0; j < Main.blocks[0].length; j++) {
-                if(Main.blocks[i][j]==null)continue;
-                g.fillRect((int)Main.blocks[i][j].x, (int)Main.blocks[i][j].y, Main.blocks[i][j].width, Main.blocks[i][j].height);
+        if(Main.player.life!=0){
+            g.setColor(Color.cyan);
+            for(int i=0;i<Main.blocks.length;i++){
+                for (int j = 0; j < Main.blocks[0].length; j++) {
+                    if(Main.blocks[i][j]==null)continue;
+                    g.fillRect((int)Main.blocks[i][j].x, (int)Main.blocks[i][j].y, Main.blocks[i][j].width, Main.blocks[i][j].height);
+                }
             }
+
+            g.setColor(Color.blue);
+            g.fillOval((int)Main.ball.x, (int)Main.ball.y, Main.ball.radius*2, Main.ball.radius*2);
+
+            g.setColor(Color.red);
+            g.fillRect((int)Main.player.x, (int)Main.player.y, Main.player.width, Main.player.height);
+
+            g.setColor(Color.black);
+            g.drawString("score/"+Main.player.score, 10, 10);
+            g.drawString("life/"+Main.player.life, 10, 25);
+        }else if(Main.player.score==Main.blocks[0][0].score*15){
+            g.setColor(Color.blue);
+            g.setFont(new Font("ＭＳ Ｐゴシック",Font.PLAIN,12));
+            g.drawString("gameclear", 110, 250);
+        }else{
+            g.setColor(Color.red);
+            g.setFont(new Font("ＭＳ Ｐゴシック",Font.PLAIN,70));
+            g.drawString("gameover", 110, 250);
         }
-
-        g.setColor(Color.blue);
-        g.fillOval((int)Main.ball.x, (int)Main.ball.y, Main.ball.radius*2, Main.ball.radius*2);
-
-        g.setColor(Color.red);
-        g.fillRect((int)Main.player.x, (int)Main.player.y, Main.player.width, Main.player.height);
-
-        g.setColor(Color.black);
-        g.drawString("score/"+Main.player.score, 10, 10);
-        g.drawString("life/"+Main.player.life, 10, 25);
-
     }
 }
