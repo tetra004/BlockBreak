@@ -18,7 +18,7 @@ public class Main{
         Timer timer = new Timer(0, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                gameLoop();
+                if(player.life!=0)gameLoop();
                 win.cv.repaint();
             }
         });
