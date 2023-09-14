@@ -42,9 +42,11 @@ public class Ball extends Entity {
             for(int j = 0; j < Main.blocks[0].length; j++){
                 if(isHit(Main.blocks[i][j])){
                     //todo:側面の場合と正面の場合で場合分けする
+                    
                     vy*=-1;
                     break;
                 }
+
             }
         }
 
