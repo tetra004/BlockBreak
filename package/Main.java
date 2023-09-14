@@ -13,7 +13,7 @@ public class Main{
         ball = new Ball(10, 300, 10);
         player = new Player(250, 400);
 
-        Window win = new Window("Test");
+        Window win = new Window("ブロック崩し");
 
         Timer timer = new Timer(0, new ActionListener() {
             @Override

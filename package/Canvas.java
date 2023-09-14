@@ -27,7 +27,15 @@ public class Canvas extends JPanel{
     }
 
     public void draw(Graphics g){
-        if(Main.player.life!=0){
+        if(Main.player.life==0){
+            g.setColor(Color.red);
+            g.setFont(new Font("ＭＳ Ｐゴシック",Font.PLAIN,70));
+            g.drawString("gameover", 110, 250);
+        }else if(Main.player.score==Block.SCORE*Main.blocks.length*Main.blocks[0].length){
+            g.setColor(Color.blue);
+            g.setFont(new Font("ＭＳ Ｐゴシック",Font.PLAIN,70));
+            g.drawString("gameclear", 110, 250);
+        }else{
             g.setColor(Color.cyan);
             for(int i=0;i<Main.blocks.length;i++){
                 for (int j = 0; j < Main.blocks[0].length; j++) {
@@ -45,14 +53,6 @@ public class Canvas extends JPanel{
             g.setColor(Color.black);
             g.drawString("score/"+Main.player.score, 10, 10);
             g.drawString("life/"+Main.player.life, 10, 25);
-        }else if(Main.player.score==Block.SCORE*Main.blocks.length*Main.blocks[0].length){
-            g.setColor(Color.blue);
-            g.setFont(new Font("ＭＳ Ｐゴシック",Font.PLAIN,70));
-            g.drawString("gameclear", 110, 250);
-        }else{
-            g.setColor(Color.red);
-            g.setFont(new Font("ＭＳ Ｐゴシック",Font.PLAIN,70));
-            g.drawString("gameover", 110, 250);
         }
     }
 }
