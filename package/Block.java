@@ -6,7 +6,7 @@ public class Block extends Entity{
 
     Block(double x,double y,int score){
         super(x, y, Block.WIDTH, Block.HEIGHT);
-        score = this.score;
+        this.score = score;
     }
 
     public static Block[][] generateArrays(){
