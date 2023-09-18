@@ -10,7 +10,7 @@ public class Block extends Entity{
 
     public static Block[][] generateArrays(){
 
-        Block[][] blocks = new Block[3][5];
+        Block[][] blocks = new Block[2][2];
 
         for(int i = 0;i<blocks.length;i++){
             for(int j = 0;j<blocks[0].length;j++){
